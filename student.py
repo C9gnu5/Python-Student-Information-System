@@ -1,20 +1,37 @@
 class StudentInfo:
-    def __init__(self, name, age, idnum, email, phone):
-        self.__name = name
-        self.__age = age
-        self.__idnum = idnum
-        self.__email = email
-        self.__phone = phone
-        self.__allstudents = []
+    def __init__(self):
+        self.name, self.age, self.idnum, self.email, self.phone = "", "", "", "", ""
+        self.allstudents = []
 
-    def getInfo(self):
-        return f"\nName: {self.__name}\nAge: {self.__age}\nID-number: {self.__idnum}\nEmail: {self.__email}\nPhone: {self.__phone}\n"
+    def setName(self, name):
+        self.name = name
+
+    def setAge(self, age):
+        self.age = age
+
+    def setIdNum(self, idnum):
+        self.idnum = idnum
+
+    def setEmail(self, email):
+        self.email = email
+
+    def setPhone(self, phone):
+        self.phone = phone
     
     def getName(self):
-        return self.__name
+        return self.name
+    
+    def getAge(self):
+        return self.age
     
     def getIdNum(self):
-        return self.__idnum
+        return self.idnum
     
-    def getAllStudents(self):
-        return self.__allstudents
+    def getEmail(self):
+        return self.email
+    
+    def getPhone(self):
+        return self.phone
+    
+    def __str__(self):
+        return f"\nName: {self.name}\nAge: {self.age}\nID-number: {self.idnum}\nEmail: {self.email}\nPhone: {self.phone}\n"
