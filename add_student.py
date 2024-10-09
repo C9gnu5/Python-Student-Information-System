@@ -1,17 +1,17 @@
-from student import StudentInfo
-
 class AddStudent:
-    def __init__(self, student_data):
+    def __init__(self, student_data, data_handler):
         self.data = student_data
+        self.data_handler = data_handler
 
     def add_student(self, name, age, idnum, email, phone):
-        new = StudentInfo()
+        new = self.data.__class__()
         new.setName(name)
         new.setAge(age)
         new.setIdNum(idnum)
         new.setEmail(email)
         new.setPhone(phone)
         self.data.allstudents.append(new)
+        self.data_handler.write_student(new)
         print(f"Added student {new.getName()} to the list.")
 
     def input_add_student(self):
