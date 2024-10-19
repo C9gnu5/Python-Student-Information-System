@@ -3,6 +3,7 @@ import os
 class Login:
     def __init__(self, finder):
         self.finder = finder
+        self.finder.data.readData()
 
     def login(self):
         attempts = 0

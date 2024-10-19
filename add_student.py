@@ -1,9 +1,9 @@
 import os
 
 class AddStudent:
-    def __init__(self, student_data, data_handler):
+    def __init__(self, student_data):
         self.data = student_data
-        self.data_handler = data_handler
+        self.filepath = os.path.dirname(__file__)+"\\"+"students_data.txt"
 
     def registerLoop(self):
         while True:
@@ -21,7 +21,7 @@ class AddStudent:
         new.setEmail(email)
         new.setPhone(phone)
         self.data.allstudents.append(new)
-        self.data_handler.write_student(new)
+        self.write_student(new)
         print(f"Added student {new.getName()} to the list.")
 
     def input_add_student(self):
@@ -30,3 +30,7 @@ class AddStudent:
         print("="*12,"NOTHING FOLLOWS","="*12)
         self.add_student(n, a, i, o, p)
     
+    def write_student(self, student):
+        with open(self.filepath, 'a+', newline='') as file:
+            file.write(f"{student.getName()}, {student.getAge()}, {student.getIdNum()}, {student.getEmail()}, {student.getPhone()}\n")
+            file.close()
