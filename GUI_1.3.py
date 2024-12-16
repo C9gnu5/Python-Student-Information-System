@@ -189,7 +189,7 @@ class MyInfoFrame:
 
         self.frame = Frame(self.win.content_frame.frame)
         Label(self.frame,text="Your Information",fg='blue',font=('Century Gothic',24,"bold"),bg="#1ee4bd",height=2).place(anchor='center',relx=0.5,rely=0.2,relwidth=1.0)
-        Label(self.frame,text="="*100,font=('Century Gothic',24),fg='blue').place(anchor='center',relx=0.5,rely=0.3),Label(self.frame,text=f"{"="*50}Nothing Follows{"="*50}",font=('Century Gothic',24),fg='blue').place(anchor='center',relx=0.5,rely=0.8)
+        Label(self.frame,text="="*100,font=('Century Gothic',24),fg='blue').place(anchor='center',relx=0.5,rely=0.3),Label(self.frame,text=f"{'='*50}Nothing Follows{'='*50}",font=('Century Gothic',24),fg='blue').place(anchor='center',relx=0.5,rely=0.8)
         self.lbl = Label(self.frame,text="User",font=('Times New Roman',24,'bold'),justify='left')
         self.lbl.place(anchor='center',relx=0.5,rely=0.55)
 
@@ -216,7 +216,7 @@ class SearchFrame:
         if stud: self.lbl.config(text=stud),self.clear()
         elif not self.txt_s.get() or self.txt_s.get().isspace(): self.lbl.config(text="Please Enter a Student ID-Number in the Search Box"),self.clear()
         else: self.lbl.config(text=f"No Student with ID-Number '{self.txt_s.get()}' Found!"),self.clear()
-        self.lbl_1.config(text="="*100),self.lbl_2.config(text=f"{"="*50}Nothing Follows{"="*50}")
+        self.lbl_1.config(text="="*100),self.lbl_2.config(text=f"{'='*50}Nothing Follows{'='*50}")
 
     def clear(self):
         self.txt_s.delete(0,'end')
