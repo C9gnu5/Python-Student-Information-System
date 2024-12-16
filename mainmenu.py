@@ -32,7 +32,7 @@ class MainMenu:
                 self.register.registerLoop()
             elif c == 4:
                 os.system('cls' if os.name == 'nt' else 'clear')
-                self.printAll.printAllStudents()
+                print(self.printAll.printAllStudents())
                 gback = input("Go back (Press Enter).")
                 if gback == "":
                     continue

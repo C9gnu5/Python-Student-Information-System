@@ -18,10 +18,9 @@ class SearchStudent:
         for student in self.data.allstudents:
             if student.getIdNum() == id:
                 print("\nStudent Found: ")
-                print("="*16,"STUDENT'S INFO","="*16)
-                print(student) 
-                return "================ NOTHING FOLLOWS ==============="
-        return f"\nSTUDENT WITH ID NUMBER {id} NOT FOUND!"
+                return f"{'='*16}STUDENT'S INFO{'='*16}\n{student}\n============== NOTHING FOLLOWS =============="
+        print(f"\nSTUDENT WITH ID NUMBER {id} NOT FOUND!")
+        return False
     
     def verify_login(self, user):
         for student in self.data.allstudents:
